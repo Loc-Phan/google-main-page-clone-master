@@ -90,7 +90,7 @@ $title-margin: 16px;
         &.user-mosted-box {
             transition: opacity 300ms ease-in-out;
             height: calc(2 * 128px);
-            // border: 1px solid green;
+            //
             @media (min-width: 672px) {
                 .most-visited-page-container {
                     width: calc(5 * 112px);
