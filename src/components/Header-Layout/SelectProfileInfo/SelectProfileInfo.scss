@@ -15,6 +15,7 @@ $width: 85%;
         width: 65%;
         // height: 82%;
         min-width: 510px;
+        min-height: 320px;
         border: 1px solid #aaa;
         position: relative;
         margin: 0;
@@ -94,8 +95,17 @@ $width: 85%;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 68%;
+            height: 69.2%;
             overflow: hidden;
+        }
+        .footer-container {
+            height: 69px;
+            background-color: #fff;
+            border-top: 1px solid #e5e5e5;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
     }
 }

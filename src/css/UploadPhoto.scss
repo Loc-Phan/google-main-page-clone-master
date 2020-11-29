@@ -11,7 +11,8 @@
         align-items: center;
 
         &.highlight {
-            border-color: purple;
+            // border-color: 5px solid blue;
+            background-color: rgba(221, 217, 217, 0.667);
         }
 
         .my-form {

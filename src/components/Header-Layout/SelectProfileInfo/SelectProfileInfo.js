@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MdClose } from "react-icons/md";
+import { FooterSetAvatar } from '../FooterSetAvatar/FooterSetAvatar';
 import { UploadPhoto } from '../GoogleApp-Layout/UploadPhoto';
 
 import "./SelectProfileInfo.scss";
@@ -9,6 +10,8 @@ const YOUR_PHOTO = "YOUR_PHOTO";
 
 export const SelectProfileInfo = ({ showSelectProfileInfo, setShowSelectProfileInfo }) => {
     const [active, setActive] = useState(UPLOAD_PHOTO);
+    const [setProfilePhoto, setSetProfilePhoto] = useState(false);
+    const [activeSetProfilePhoto, setActiveSetProfilePhoto] = useState(false);
     const handleClickActive = (event) => {
         if (event.target.className.includes("upload-photos"))
             setActive(UPLOAD_PHOTO)
@@ -16,7 +19,7 @@ export const SelectProfileInfo = ({ showSelectProfileInfo, setShowSelectProfileI
             setActive(YOUR_PHOTO);
     }
 
-    const [heightContainer, setHeightContainer] = useState(window.innerHeight * 0.85);
+    const [heightContainer, setHeightContainer] = useState(window.innerHeight * 0.75);
 
     useEffect(() => {
         window.addEventListener("resize", () => {
@@ -56,8 +59,19 @@ export const SelectProfileInfo = ({ showSelectProfileInfo, setShowSelectProfileI
                 </div>
                 <div className="choose-photos-component-container">
                     {active === UPLOAD_PHOTO && (
-                        <UploadPhoto />
+                        <UploadPhoto
+                            setProfilePhoto={setProfilePhoto}
+                            setActiveSetProfilePhoto={setActiveSetProfilePhoto}
+                            setShowSelectProfileInfo={setShowSelectProfileInfo}
+                        />
                     )}
+                </div>
+                <div className="footer-container">
+                    <FooterSetAvatar
+                        setSetProfilePhoto={setSetProfilePhoto}
+                        activeSetProfilePhoto={activeSetProfilePhoto}
+                        setShowSelectProfileInfo={setShowSelectProfileInfo}
+                    />
                 </div>
             </div>
         </div>

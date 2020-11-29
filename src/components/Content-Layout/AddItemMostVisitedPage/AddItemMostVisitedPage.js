@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./AddItemMostVisitedPage.scss";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
 
 export const AddItemMostVisitedPage = ({
