@@ -1,6 +1,6 @@
 import React from "react";
 import "./AddItemMostVisitedPage.scss";
-import { AiOutlinePlus } from "react-icons/ai";
+import { HiPlus } from "react-icons/hi";
 
 export const AddItemMostVisitedPage = ({
     name,
@@ -26,7 +26,7 @@ export const AddItemMostVisitedPage = ({
                 >
                     <div className="background-container-icon">
                         <div className="circle-background">
-                            <AiOutlinePlus />
+                            <HiPlus style={{ fontSize: 20 }} />
                         </div>
                     </div>
                     <div className="most-visited-page-item-name">{name}</div>

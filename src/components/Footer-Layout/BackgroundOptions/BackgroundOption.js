@@ -40,7 +40,7 @@ export const BackgroundOptions = ({
                                         .replace("WIDTH", "176")
                                         .replace("HEIGHT", "176");
                                     return (
-                                        <div className="col-4">
+                                        <div className="col-4" key={url}>
                                             <OptionContentItem
                                                 nameContent={item.name_content}
                                                 nameFile={item.name_file}

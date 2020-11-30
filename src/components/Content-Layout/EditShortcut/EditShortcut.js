@@ -65,9 +65,9 @@ export const EditShortcut = ({
             if (check === true)
                 newListMostVisitedPage.push(currentEditShortcutShadow);
         }
-        console.log(newListMostVisitedPage);
         setStateListMostVisitedPage(newListMostVisitedPage);
     };
+    const randomId = Math.floor(Math.random() * 100) + 10;
 
     return (
         <div className="edit-shortcut-container">
@@ -99,6 +99,7 @@ export const EditShortcut = ({
                         value={currentEditShortcutShadow.url}
                         onChange={(event) => {
                             setcurrentEditShortcutShadow({
+                                id: randomId,
                                 name: currentEditShortcutShadow.name,
                                 url: event.target.value,
                             });

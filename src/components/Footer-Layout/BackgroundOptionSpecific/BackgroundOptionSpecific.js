@@ -39,7 +39,7 @@ export const BackgroundOptionSpecific = ({
                     <div className="row">
                         {listBackground.map((item) => {
                             return (
-                                <div className="col-4">
+                                <div className="col-4" key={item.url}>
                                     <BackgroundOptionSpecificOption
                                         urlImage={item.url}
                                         author={item.author}

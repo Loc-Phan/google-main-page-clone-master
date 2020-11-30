@@ -19,8 +19,6 @@ export const BackgroundOptionSpecificOption = ({
             setChoosen(false);
         }
     }, [urlImageSelected]);
-    console.log("author: " + author);
-    console.log("source: " + source);
 
     return (
         <div className="background-option-specific-option-container">

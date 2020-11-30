@@ -165,7 +165,7 @@ export const ShortcutsOptions = () => {
                                 Don't show shortcuts on this page
               </div>
                         </div>
-                        <div class="custom-control custom-switch">
+                        <div className="custom-control custom-switch">
                             <input
                                 ref={inputRef}
                                 type="checkbox"

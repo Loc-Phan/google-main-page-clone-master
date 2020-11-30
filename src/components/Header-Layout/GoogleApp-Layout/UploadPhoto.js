@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { BsCardImage } from "react-icons/bs";
 import { firebase } from "../../../firebase/index";
 
 import "../../../css/UploadPhoto.scss";

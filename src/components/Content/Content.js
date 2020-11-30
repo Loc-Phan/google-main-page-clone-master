@@ -23,6 +23,7 @@ export const Content = () => {
     const [editShortcutMode, setEditShortcutMode] = useState("Shortcut");
     const [showEditShortcut, setShowEditShortcut] = useState(false);
     const [currentEditShortcut, setCurrentEditShortcut] = useState({
+        id: "",
         name: "",
         url: "",
     });
@@ -63,9 +64,8 @@ export const Content = () => {
                             />
                         )
                     })}
-                    {/* {addItemOption && (
+                    {addItemOption && (
                         <AddItemMostVisitedPage
-                            
                             name="Add Item"
                             link={""}
                             showEditShortcut={showEditShortcut}
@@ -73,7 +73,7 @@ export const Content = () => {
                             setCurrentEditShortcut={setCurrentEditShortcut}
                             setEditShortcutMode={setEditShortcutMode}
                         />
-                    )} */}
+                    )}
                 </div>
             </div>
             {showEditShortcut && (

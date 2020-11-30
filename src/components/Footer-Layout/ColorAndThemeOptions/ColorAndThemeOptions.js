@@ -12,7 +12,7 @@ export const ColorAndThemeOptions = () => {
                     <div className="row">
                         {data.color_icons.map((item) => {
                             return (
-                                <div className="col-2 item-color">
+                                <div className="col-2 item-color" key={item.color}>
                                     <div className="item-color-buffer">
                                         <div className="color-image-container">
                                             <div
