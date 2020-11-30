@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { BackgroundOptions } from '../BackgroundOptions/BackgroundOption';
+import { ShortcutsOptions } from '../ShortcutsOptions/ShortcutsOptions';
+import { ColorAndThemeOptions } from '../ColorAndThemeOptions/ColorAndThemeOptions';
 import { OptionItem } from '../OptionItem/OptionItem';
 import { MdKeyboardBackspace } from "react-icons/md";
 
@@ -13,7 +15,7 @@ const CUSTOMISE_MODE = "CUSTOMISE";
 const SPECIFIC_MODE = "SPECIFIC";
 
 const BACKGROUND_OPTION = "BACKGROUND_OPTION";
-const BACKGROUND_SPECIFIC_OPTION = "BACKGROUND_SPECIFIC_OPTION";
+// const BACKGROUND_SPECIFIC_OPTION = "BACKGROUND_SPECIFIC_OPTION";
 
 export const CustomizeLayout = ({
     backgroundImage,
@@ -23,7 +25,8 @@ export const CustomizeLayout = ({
     setImageDefaultBackground,
     setLinkIcon,
     setAuthorImage,
-    // setShowBackgroundImageAttribute,
+    defaultInfoImage,
+    setDefaultInfoImage
 }) => {
     const [contentMode, setContentMode] = useState(BACKGROUND);
     const [titleBackgroundMode, setTitleBackgroundMode] = useState(CUSTOMISE_MODE);
@@ -92,6 +95,12 @@ export const CustomizeLayout = ({
                                 // setShowBackgroundImageAttributes={setShowBackgroundImageAttributes}
                                 />
                             )}
+                            {contentMode === SHORTCUTS && (
+                                <ShortcutsOptions />
+                            )}
+                            {contentMode === COLOR_AND_THEME && (
+                                <ColorAndThemeOptions />
+                            )}
                         </div>
                     </div>
                 </div>
@@ -101,7 +110,7 @@ export const CustomizeLayout = ({
                         onClick={() => {
                             setShowCustomizeLayout(false);
                             setDefaultBackground(true);
-                            // setShowBackgroundImageAttribute(false);
+                            setDefaultInfoImage(true);
                         }}
                     >Cancel</div>
                     <div className="button done"
@@ -109,7 +118,7 @@ export const CustomizeLayout = ({
                             setShowCustomizeLayout(false);
                             setDefaultBackground(false);
                             setImageDefaultBackground(backgroundImage);
-                            // setShowBackgroundImageAttribute(true);
+                            setDefaultInfoImage(false);
                         }}
                     >
                         Done

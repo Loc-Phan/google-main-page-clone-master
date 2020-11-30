@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./MostVisitedPageItem.scss";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
@@ -16,7 +16,6 @@ export const MostVisitedPageItem = ({
         setShowEditShortcut(true);
     };
 
-    const [sourceIcon, setSourceIcon] = useState(`https://${link}/favicon.ico`);
     return (
         <div className="most-visited-page-item" title={name}>
             <div className="most-visited-page-item-buffer">

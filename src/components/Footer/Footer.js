@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiPencil } from "react-icons/hi";
 import { CustomizeLayout } from '../Footer-Layout/CustomizeLayout/CustomizeLayout';
 import { BsLink } from "react-icons/bs";
@@ -13,30 +13,25 @@ export const Footer = ({
     const [showCustomizeLayout, setShowCustomizeLayout] = useState(false);
     const [linkIcon, setLinkIcon] = useState("");
     const [authorImage, setAuthorImage] = useState("");
-    // const [showBackgroundImageAttributes, setShowBackgroundImageAttributes] = useState(false);
-    // const [showBackgroundImageAttribute, setShowBackgroundImageAttribute] = useState(false);
-    // const preAuthorImage = useRef("");
-    // useEffect(() => {
-    //     if (authorImage !== "") {
-    //         const newAuthorImage = preAuthorImage.current;
-    //         preAuthorImage.current = authorImage;
-    //         if (authorImage !== newAuthorImage) {
-    //             if (showBackgroundImageAttribute === false) {
-    //                 setAuthorImage(newAuthorImage);
-    //                 setShowBackgroundImageAttributes(false);
-    //             }
-    //             else {
-    //                 setAuthorImage(authorImage);
-    //                 setShowBackgroundImageAttributes(true);
-    //             }
-    //         }
-    //     }
-    // }, [authorImage]);
+    const [showBackgroundImageAttributes, setShowBackgroundImageAttributes] = useState(false);
+    const [defaultInfoImage, setDefaultInfoImage] = useState(false);
+    // const preAuthorImage = "";
+    useEffect(() => {
+        if (authorImage !== "") {
+            setShowBackgroundImageAttributes(true);
+        }
+    });
+    useEffect(() => {
+        if (defaultInfoImage) {
+            setAuthorImage(authorImage);
+            setDefaultInfoImage(false);
+        }
+    })
     return (
         <div
             className="footer-container"
         >
-            {/* {showBackgroundImageAttributes && (
+            {showBackgroundImageAttributes && (
                 <a
                     className="bg-image-attribution"
                     href={linkIcon}
@@ -46,7 +41,7 @@ export const Footer = ({
                     />
                     <div className="link-icon">{authorImage}</div>
                 </a>
-            )} */}
+            )}
             <div
                 className="customize-button"
                 title="Customize this page"
@@ -66,6 +61,8 @@ export const Footer = ({
                     setImageDefaultBackground={setImageDefaultBackground}
                     setLinkIcon={setLinkIcon}
                     setAuthorImage={setAuthorImage}
+                    defaultInfoImage={defaultInfoImage}
+                    setDefaultInfoImage={setDefaultInfoImage}
                 // setShowBackgroundImageAttribute={setShowBackgroundImageAttribute}
                 />
             )}

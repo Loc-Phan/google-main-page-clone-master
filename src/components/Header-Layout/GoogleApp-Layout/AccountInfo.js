@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AiOutlineCamera } from "react-icons/ai";
 
 export const AccountInfo = ({ showSelectProfileInfo, setShowSelectProfileInfo }) => {

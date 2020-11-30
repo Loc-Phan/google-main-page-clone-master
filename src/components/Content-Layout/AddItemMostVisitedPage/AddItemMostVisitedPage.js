@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./AddItemMostVisitedPage.scss";
 import { AiOutlinePlus } from "react-icons/ai";
 
 export const AddItemMostVisitedPage = ({
     name,
     link,
-    // showEditShortcut,
-    // setShowEditShortcut,
-    // setCurrentEditShortcut,
-    // setEditShortcutMode,
+    showEditShortcut,
+    setShowEditShortcut,
+    setCurrentEditShortcut,
+    setEditShortcutMode,
 }) => {
     return (
         <div className="most-visited-page-item" title={name}>
             <div
                 className="most-visited-page-item-buffer"
-            // onClick={() => {
-            //     setCurrentEditShortcut({ name: "", url: "" });
-            //     setEditShortcutMode("Add shortcut");
-            //     setShowEditShortcut(true);
-            // }}
+                onClick={() => {
+                    setCurrentEditShortcut({ name: "", url: "" });
+                    setEditShortcutMode("Add shortcut");
+                    setShowEditShortcut(true);
+                }}
             >
-                <a
+                <div
                     className="most-visited-page-item-link"
                     href={"https://" + link + "/"}
                 >
@@ -30,7 +30,7 @@ export const AddItemMostVisitedPage = ({
                         </div>
                     </div>
                     <div className="most-visited-page-item-name">{name}</div>
-                </a>
+                </div>
             </div>
         </div>
     );

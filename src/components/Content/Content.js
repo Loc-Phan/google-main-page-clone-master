@@ -4,6 +4,7 @@ import { MostVisitedPageItem } from "../Content-Layout/MostVisitedPageItem/MostV
 import { AddItemMostVisitedPage } from "../Content-Layout/AddItemMostVisitedPage/AddItemMostVisitedPage";
 
 import './Content.scss';
+import { EditShortcut } from '../Content-Layout/EditShortcut/EditShortcut';
 
 export const Content = () => {
     const listMostVisitedPage = [
@@ -13,12 +14,18 @@ export const Content = () => {
         { name: 'Stack Overflow', url: 'stackoverflow.com' },
         { name: 'Github', url: 'github.com' },
         { name: 'Firebase', url: 'firebase.google.com' },
-        { name: 'Youtube', url: 'youtube.com' },
-        { name: 'Facebook', url: 'facebook.com' },
-        { name: 'Youtube', url: 'youtube.com' },
+        { name: 'Material UI', url: 'material-ui.com' },
+        { name: 'Udemy', url: 'udemy.com' },
+        { name: 'NodeJs', url: 'nodejs.org' },
     ];
 
     const [addItemOption, setAddItemOption] = useState(true);
+    const [editShortcutMode, setEditShortcutMode] = useState("Shortcut");
+    const [showEditShortcut, setShowEditShortcut] = useState(false);
+    const [currentEditShortcut, setCurrentEditShortcut] = useState({
+        name: "",
+        url: "",
+    });
     const [stateListMostVisitedPage, setStateListMostVisitedPage] = useState(listMostVisitedPage);
 
     useEffect(() => {
@@ -45,9 +52,13 @@ export const Content = () => {
                 <div className="most-visited-page-container">
                     {stateListMostVisitedPage.map(({ name, url }) => {
                         return (
-                            < MostVisitedPageItem
+                            <MostVisitedPageItem
                                 name={name}
                                 link={url}
+                                showEditShortcut={showEditShortcut}
+                                setShowEditShortcut={setShowEditShortcut}
+                                setCurrentEditShortcut={setCurrentEditShortcut}
+                                setEditShortcutMode={setEditShortcutMode}
                             />
                         )
                     })}
@@ -55,14 +66,25 @@ export const Content = () => {
                         <AddItemMostVisitedPage
                             name="Add Item"
                             link={""}
-                        // showEditShortcut={showEditShortcut}
-                        // setShowEditShortcut={setShowEditShortcut}
-                        // setCurrentEditShortcut={setCurrentEditShortcut}
-                        // setEditShortcutMode={setEditShortcutMode}
+                            showEditShortcut={showEditShortcut}
+                            setShowEditShortcut={setShowEditShortcut}
+                            setCurrentEditShortcut={setCurrentEditShortcut}
+                            setEditShortcutMode={setEditShortcutMode}
                         />
                     )}
                 </div>
             </div>
+            {showEditShortcut && (
+                <EditShortcut
+                    nameEdit={editShortcutMode}
+                    currentEditShortcut={currentEditShortcut}
+                    setCurrentEditShortcut={setCurrentEditShortcut}
+                    showEditShortcut={showEditShortcut}
+                    setShowEditShortcut={setShowEditShortcut}
+                    stateListMostVisitedPage={stateListMostVisitedPage}
+                    setStateListMostVisitedPage={setStateListMostVisitedPage}
+                />
+            )}
         </div>
     )
 }

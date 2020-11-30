@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./ImageCrop.scss";
 import "cropperjs/dist/cropper.min.css";
 import Cropper from "react-cropper";

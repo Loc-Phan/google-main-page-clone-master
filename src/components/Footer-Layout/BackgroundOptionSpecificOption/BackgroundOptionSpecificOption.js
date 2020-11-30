@@ -6,7 +6,6 @@ export const BackgroundOptionSpecificOption = ({
     author,
     urlImageSelected,
     setUrlImageSelected,
-    // setShowBackgroundImageAttributes,
     source,
     setLinkIcon,
     setAuthorImage,
@@ -20,6 +19,8 @@ export const BackgroundOptionSpecificOption = ({
             setChoosen(false);
         }
     }, [urlImageSelected]);
+    console.log("author: " + author);
+    console.log("source: " + source);
 
     return (
         <div className="background-option-specific-option-container">
@@ -32,7 +33,6 @@ export const BackgroundOptionSpecificOption = ({
                         setPaddingOnClick("15px");
                         setUrlImageSelected(urlImage);
                         setChoosen(true);
-                        // setShowBackgroundImageAttributes(true);
                         setAuthorImage(author);
                         setLinkIcon(source);
                     }}

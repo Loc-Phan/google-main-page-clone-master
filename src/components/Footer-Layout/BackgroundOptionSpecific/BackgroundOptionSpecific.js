@@ -7,10 +7,8 @@ export const BackgroundOptionSpecific = ({
     setBackgroundImage,
     setLinkIcon,
     setAuthorImage,
-    // setShowBackgroundImageAttributes
 }) => {
     const [listBackground, setListBackground] = useState([]);
-    const [nameListBackground, setNameListBackground] = useState("");
     const [urlImageSelected, setUrlImageSelected] = useState("");
 
     useEffect(() => {
@@ -22,6 +20,7 @@ export const BackgroundOptionSpecific = ({
     useEffect(() => {
         if (urlImageSelected !== "")
             setBackgroundImage(
+                //change size of image to replace default background
                 urlImageSelected.replace("w156", "w3840").replace("h117", "h2160")
             );
     });
@@ -31,7 +30,6 @@ export const BackgroundOptionSpecific = ({
         const dataPromise = await dataFetch;
         const data = await dataPromise.json();
         setListBackground(data.link_list);
-        setNameListBackground(data.name);
     }
 
     return (
@@ -50,7 +48,6 @@ export const BackgroundOptionSpecific = ({
                                         setLinkIcon={setLinkIcon}
                                         urlImageSelected={urlImageSelected}
                                         setUrlImageSelected={setUrlImageSelected}
-                                    // setShowBackgroundImageAttributes={setShowBackgroundImageAttributes}
                                     />
                                 </div>
                             );

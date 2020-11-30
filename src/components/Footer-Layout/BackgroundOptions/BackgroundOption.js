@@ -16,7 +16,6 @@ export const BackgroundOptions = ({
     setNameFileBackgroundSpecific,
     setLinkIcon,
     setAuthorImage,
-    setShowBackgroundImageAttributes
 }) => {
     const [dataContent, setDataContent] = useState([]);
     useEffect(() => {

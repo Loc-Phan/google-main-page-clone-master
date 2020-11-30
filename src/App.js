@@ -6,7 +6,7 @@ import { Footer } from './components/Footer/Footer';
 
 export const App = () => {
   const [imageDefaultBackground, setImageDefaultBackground] = useState(
-    "./images/background/tumblr_nynjrh0SUR1qhttpto1_1280.jpg"
+    "https://lh4.googleusercontent.com/proxy/GcVBBS6O_wbvkYe3ehEZ0BcKhH3ddT_b5-fAd8A61bM-pM6u5LOuGNHS6q5Mc67XrMxi52gmkk11w6MpbChpxoAhjVm2CWkQ92EnGQ=w3840-h2160-p-k-no-nd-mv"
   );
 
   const [backgroundImage, setBackgroundImage] = useState(
