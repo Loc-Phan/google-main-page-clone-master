@@ -8,15 +8,15 @@ import { EditShortcut } from '../Content-Layout/EditShortcut/EditShortcut';
 
 export const Content = () => {
     const listMostVisitedPage = [
-        { name: 'Google', url: 'google.com' },
-        { name: 'ReactJS', url: 'reactjs.org' },
-        { name: 'W3Schools', url: 'w3schools.com' },
-        { name: 'Stack Overflow', url: 'stackoverflow.com' },
-        { name: 'Github', url: 'github.com' },
-        { name: 'Firebase', url: 'firebase.google.com' },
-        { name: 'Material UI', url: 'material-ui.com' },
-        { name: 'Udemy', url: 'udemy.com' },
-        { name: 'NodeJs', url: 'nodejs.org' },
+        { id: '1', name: 'Google', url: 'google.com' },
+        { id: '2', name: 'ReactJS', url: 'reactjs.org' },
+        { id: '3', name: 'W3Schools', url: 'w3schools.com' },
+        { id: '4', name: 'Stack Overflow', url: 'stackoverflow.com' },
+        { id: '5', name: 'Github', url: 'github.com' },
+        { id: '6', name: 'Firebase', url: 'firebase.google.com' },
+        { id: '7', name: 'Material UI', url: 'material-ui.com' },
+        { id: '8', name: 'Udemy', url: 'udemy.com' },
+        { id: '9', name: 'NodeJs', url: 'nodejs.org' },
     ];
 
     const [addItemOption, setAddItemOption] = useState(true);
@@ -50,9 +50,10 @@ export const Content = () => {
             </div>
             <div className="content-item user-mosted-box">
                 <div className="most-visited-page-container">
-                    {stateListMostVisitedPage.map(({ name, url }) => {
+                    {stateListMostVisitedPage.map(({ id, name, url }) => {
                         return (
                             <MostVisitedPageItem
+                                key={id}
                                 name={name}
                                 link={url}
                                 showEditShortcut={showEditShortcut}
@@ -62,8 +63,9 @@ export const Content = () => {
                             />
                         )
                     })}
-                    {addItemOption && (
+                    {/* {addItemOption && (
                         <AddItemMostVisitedPage
+                            
                             name="Add Item"
                             link={""}
                             showEditShortcut={showEditShortcut}
@@ -71,7 +73,7 @@ export const Content = () => {
                             setCurrentEditShortcut={setCurrentEditShortcut}
                             setEditShortcutMode={setEditShortcutMode}
                         />
-                    )}
+                    )} */}
                 </div>
             </div>
             {showEditShortcut && (
