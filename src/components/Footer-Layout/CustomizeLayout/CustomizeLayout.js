@@ -25,7 +25,6 @@ export const CustomizeLayout = ({
     setImageDefaultBackground,
     setLinkIcon,
     setAuthorImage,
-    defaultInfoImage,
     setDefaultInfoImage
 }) => {
     const [contentMode, setContentMode] = useState(BACKGROUND);
@@ -91,7 +90,6 @@ export const CustomizeLayout = ({
                                     nameFileBackgroundSpecific={nameFileBackgroundSpecific}
                                     setNameFileBackgroundSpecific={setNameFileBackgroundSpecific}
                                     setAuthorImage={setAuthorImage}
-                                    setLinkIcon={setLinkIcon}
                                 // setShowBackgroundImageAttributes={setShowBackgroundImageAttributes}
                                 />
                             )}

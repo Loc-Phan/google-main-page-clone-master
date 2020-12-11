@@ -14,7 +14,6 @@ export const BackgroundOptions = ({
     setBackgroundImage,
     nameFileBackgroundSpecific,
     setNameFileBackgroundSpecific,
-    setLinkIcon,
     setAuthorImage,
 }) => {
     const [dataContent, setDataContent] = useState([]);
@@ -65,8 +64,6 @@ export const BackgroundOptions = ({
                     nameFileListBackgroundOption={nameFileBackgroundSpecific}
                     setBackgroundImage={setBackgroundImage}
                     setAuthorImage={setAuthorImage}
-                    setLinkIcon={setLinkIcon}
-                // setShowBackgroundImageAttributes={setShowBackgroundImageAttributes}
                 />
             )}
         </React.Fragment>

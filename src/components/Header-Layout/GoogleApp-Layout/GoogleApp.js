@@ -13,8 +13,8 @@ export const GoogleApp = ({ url, name, height, link }) => {
                     backgroundSizeY: 2962,
                 }}
                 href={link}
-            ></a>
-            <a className="space-hidden" href={link}></a>
+            >hidden</a>
+            <a className="space-hidden" href={link}>hidden</a>
             <a
                 className="name-icon"
                 href={link}

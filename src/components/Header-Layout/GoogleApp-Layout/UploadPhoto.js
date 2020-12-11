@@ -30,7 +30,7 @@ export const UploadPhoto = ({
             setCrop(true);
             // after that disappear select profile Infor
         }
-    });
+    }, [setProfilePhoto]);
 
     const preventDefault = (event) => {
         event.preventDefault();

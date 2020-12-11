@@ -35,7 +35,7 @@ export const GoogleAppsContainer = ({ outsideClick }) => {
                         href={data["account-icon"].link}
                     >
                     </a>
-                    <a className="space-hidden" href={data["account-icon"].link}></a>
+                    <a className="space-hidden" href={`${data["account-icon"].link}`} >link-hidden</a>
                     <a
                         className="name-icon"
                         href={data["account-icon"].link}

@@ -6,8 +6,6 @@ export const BackgroundOptionSpecificOption = ({
     author,
     urlImageSelected,
     setUrlImageSelected,
-    source,
-    setLinkIcon,
     setAuthorImage,
 }) => {
     const [paddingOnClick, setPaddingOnClick] = useState("0px");
@@ -18,7 +16,7 @@ export const BackgroundOptionSpecificOption = ({
             setPaddingOnClick("0px");
             setChoosen(false);
         }
-    }, [urlImageSelected]);
+    }, [urlImageSelected, urlImage]);
 
     return (
         <div className="background-option-specific-option-container">
@@ -32,13 +30,12 @@ export const BackgroundOptionSpecificOption = ({
                         setUrlImageSelected(urlImage);
                         setChoosen(true);
                         setAuthorImage(author);
-                        setLinkIcon(source);
                     }}
                 >
                     {choosen && <div className="choose-icon">✓</div>}
                     <img
                         src={urlImage.replace("WIDTH", "176").replace("HEIGHT", "176")}
-                        alt={`Photo by ${author}`}
+                        alt={`${author}`}
                         className="img-fluid"
                     ></img>
                 </div>

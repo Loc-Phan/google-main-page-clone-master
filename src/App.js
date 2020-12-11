@@ -19,7 +19,7 @@ export const App = () => {
       setBackgroundImage(imageDefaultBackground);
       setDefaultBackground(false);
     }
-  }, [defaultBackground]);
+  }, [defaultBackground, imageDefaultBackground]);
   return (
     <div
       className="container-all"

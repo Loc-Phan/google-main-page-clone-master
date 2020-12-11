@@ -64,6 +64,8 @@
             .image-icon {
                 width: 54px;
                 height: 54px;
+                text-indent: 100%;
+                white-space: nowrap;
                 overflow: hidden;
                 cursor: pointer;
                 transition: 0.2s all linear;
@@ -76,6 +78,9 @@
             .space-hidden {
                 height: 10px;
                 width: 100%;
+                text-indent: 100%;
+                white-space: nowrap;
+                overflow: hidden;
                 background-color: transparent;
                 &:hover {
                     cursor: pointer;

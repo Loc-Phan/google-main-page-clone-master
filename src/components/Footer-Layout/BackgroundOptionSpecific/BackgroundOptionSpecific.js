@@ -5,7 +5,6 @@ import { BackgroundOptionSpecificOption } from "../BackgroundOptionSpecificOptio
 export const BackgroundOptionSpecific = ({
     nameFileListBackgroundOption,
     setBackgroundImage,
-    setLinkIcon,
     setAuthorImage,
 }) => {
     const [listBackground, setListBackground] = useState([]);
@@ -43,9 +42,7 @@ export const BackgroundOptionSpecific = ({
                                     <BackgroundOptionSpecificOption
                                         urlImage={item.url}
                                         author={item.author}
-                                        source={item.source}
                                         setAuthorImage={setAuthorImage}
-                                        setLinkIcon={setLinkIcon}
                                         urlImageSelected={urlImageSelected}
                                         setUrlImageSelected={setUrlImageSelected}
                                     />

@@ -36,8 +36,8 @@ export const EditShortcut = ({
                 item.url !== currentEditShortcutShadow.url
             )
                 return item;
+            else return null;
         });
-
         setStateListMostVisitedPage(newListMostVisitedPage);
     };
 
