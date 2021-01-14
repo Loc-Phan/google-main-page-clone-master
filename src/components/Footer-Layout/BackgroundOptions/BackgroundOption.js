@@ -14,13 +14,13 @@ export const BackgroundOptions = ({
     setBackgroundImage,
     nameFileBackgroundSpecific,
     setNameFileBackgroundSpecific,
-    setAuthorImage,
+    setImageAttribution,
+
 }) => {
     const [dataContent, setDataContent] = useState([]);
     useEffect(() => {
         loadData("./data/link-image/manage-data-file.json");
     }, []);
-
     async function loadData(nameFile) {
         const dataFetch = fetch(nameFile);
         const dataPromise = await dataFetch;
@@ -63,7 +63,7 @@ export const BackgroundOptions = ({
                 <BackgroundOptionSpecific
                     nameFileListBackgroundOption={nameFileBackgroundSpecific}
                     setBackgroundImage={setBackgroundImage}
-                    setAuthorImage={setAuthorImage}
+                    setImageAttribution={setImageAttribution}
                 />
             )}
         </React.Fragment>

@@ -5,7 +5,7 @@ import { BackgroundOptionSpecificOption } from "../BackgroundOptionSpecificOptio
 export const BackgroundOptionSpecific = ({
     nameFileListBackgroundOption,
     setBackgroundImage,
-    setAuthorImage,
+    setImageAttribution
 }) => {
     const [listBackground, setListBackground] = useState([]);
     const [urlImageSelected, setUrlImageSelected] = useState("");
@@ -41,10 +41,11 @@ export const BackgroundOptionSpecific = ({
                                 <div className="col-4" key={item.url}>
                                     <BackgroundOptionSpecificOption
                                         urlImage={item.url}
-                                        author={item.author}
-                                        setAuthorImage={setAuthorImage}
+                                        authorImage={item.author}
+                                        sourceImage={item.source}
                                         urlImageSelected={urlImageSelected}
                                         setUrlImageSelected={setUrlImageSelected}
+                                        setImageAttribution={setImageAttribution}
                                     />
                                 </div>
                             );

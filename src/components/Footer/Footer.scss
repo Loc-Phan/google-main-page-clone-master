@@ -1,9 +1,25 @@
 .footer-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin: 16px;
+    .background-image-attribution {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 8px;
+        color: white;
+        .link-icon-link {
+            font-size: 20px;
+            margin-inline-end: 8px;
+        }
+        .image-attribution {
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
     .bg-image-attribution {
         position: fixed;
         left: 16px;

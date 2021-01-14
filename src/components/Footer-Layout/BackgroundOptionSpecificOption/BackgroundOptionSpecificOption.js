@@ -3,10 +3,11 @@ import "./BackgroundOptionSpecificOption.scss";
 
 export const BackgroundOptionSpecificOption = ({
     urlImage,
-    author,
+    authorImage,
+    sourceImage,
     urlImageSelected,
     setUrlImageSelected,
-    setAuthorImage,
+    setImageAttribution
 }) => {
     const [paddingOnClick, setPaddingOnClick] = useState("0px");
     const [choosen, setChoosen] = useState(false);
@@ -23,19 +24,20 @@ export const BackgroundOptionSpecificOption = ({
             <div className="background-option-specific-option-buffer">
                 <div
                     className="option-container"
-                    title={`Photo by ${author}`}
+                    title={`Photo by ${authorImage}`}
                     style={{ padding: paddingOnClick }}
                     onClick={() => {
                         setPaddingOnClick("15px");
                         setUrlImageSelected(urlImage);
                         setChoosen(true);
-                        setAuthorImage(author);
+                        setImageAttribution({ author: authorImage, source: sourceImage });
+
                     }}
                 >
                     {choosen && <div className="choose-icon">✓</div>}
                     <img
                         src={urlImage.replace("WIDTH", "176").replace("HEIGHT", "176")}
-                        alt={`${author}`}
+                        alt={`${authorImage}`}
                         className="img-fluid"
                     ></img>
                 </div>
