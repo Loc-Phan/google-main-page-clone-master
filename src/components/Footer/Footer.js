@@ -11,14 +11,17 @@ export const Footer = ({
     setImageDefaultBackground,
 }) => {
     const [showCustomizeLayout, setShowCustomizeLayout] = useState(false);
-    const [imageAttribution, setImageAttribution] = useState({ author: null, source: null });
-    const [defaultInfoImage, setDefaultInfoImage] = useState(false);
+    const [imageDefaultAttribution, setImageDefaultAttribution] = useState({ author: null, source: null });
+    const [imageAttribution, setImageAttribution] = useState({ ...imageDefaultAttribution });
+    const [defaultImage, setDefaultImage] = useState(false);
 
     useEffect(() => {
-        if (defaultInfoImage) {
-            setDefaultInfoImage(false);
+        if (defaultImage) {
+            setImageAttribution({ ...imageDefaultAttribution });
+            setDefaultImage(false);
         }
-    }, [defaultInfoImage]);
+    }, [defaultImage, imageDefaultAttribution]);
+
     return (
         <div
             className="footer-container"
@@ -50,10 +53,10 @@ export const Footer = ({
                     setDefaultBackground={setDefaultBackground}
                     setShowCustomizeLayout={setShowCustomizeLayout}
                     setImageDefaultBackground={setImageDefaultBackground}
-                    defaultInfoImage={defaultInfoImage}
-                    setDefaultInfoImage={setDefaultInfoImage}
-                    setImageAttribution={setImageAttribution}
                     imageAttribution={imageAttribution}
+                    setImageAttribution={setImageAttribution}
+                    setImageDefaultAttribution={setImageDefaultAttribution}
+                    setDefaultImage={setDefaultImage}
                 />
             )}
         </div>

@@ -24,9 +24,10 @@ export const CustomizeLayout = ({
     setDefaultBackground,
     setShowCustomizeLayout,
     setImageDefaultBackground,
-    setDefaultInfoImage,
     setImageAttribution,
-    imageAttribution
+    imageAttribution,
+    setImageDefaultAttribution,
+    setDefaultImage,
 }) => {
     const [contentMode, setContentMode] = useState(BACKGROUND);
     const [titleBackgroundMode, setTitleBackgroundMode] = useState(CUSTOMISE_MODE);
@@ -34,7 +35,6 @@ export const CustomizeLayout = ({
 
     const [nameFileBackgroundSpecific, setNameFileBackgroundSpecific] = useState("");
     const [showOptions, setShowOptions] = useState(BACKGROUND_OPTION);
-    const [imageInfo, setImageInfo] = useState({ author: null, source: null });
 
 
     return (
@@ -112,8 +112,7 @@ export const CustomizeLayout = ({
                         onClick={() => {
                             setShowCustomizeLayout(false);
                             setDefaultBackground(true);
-                            setDefaultInfoImage(true);
-                            setImageAttribution(imageInfo);
+                            setDefaultImage(true);
                         }}
                     >Cancel</div>
                     <div className="button done"
@@ -121,10 +120,8 @@ export const CustomizeLayout = ({
                             setShowCustomizeLayout(false);
                             setDefaultBackground(false);
                             setImageDefaultBackground(backgroundImage);
-                            setDefaultInfoImage(false);
-                            console.log(imageAttribution);
-                            setImageInfo({ ...imageAttribution });
-                            console.log(imageInfo);
+                            setDefaultImage(false);
+                            setImageDefaultAttribution(imageAttribution);
                         }}
                     >
                         Done

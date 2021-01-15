@@ -31,7 +31,6 @@ export const BackgroundOptionSpecificOption = ({
                         setUrlImageSelected(urlImage);
                         setChoosen(true);
                         setImageAttribution({ author: authorImage, source: sourceImage });
-
                     }}
                 >
                     {choosen && <div className="choose-icon">✓</div>}
