@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { AccountInfo } from '../GoogleApp-Layout/AccountInfo';
 import { AccountItem } from '../GoogleApp-Layout/AccountItem';
 import { AddAnotherAccount } from '../GoogleApp-Layout/AddAnotherAccount';
@@ -8,13 +8,14 @@ import { SignoutAccount } from '../GoogleApp-Layout/SignoutAccount';
 import { auth } from "../../../firebase/index";
 
 import "./GoogleAccount.scss";
+import { useState } from 'react';
 
-export const GoogleAccount = ({ 
-    outsideClick, 
-    showSelectProfileInfo, 
+export const GoogleAccount = ({
+    outsideClick,
+    showSelectProfileInfo,
     setShowSelectProfileInfo,
     setUserInfo
-    }) => {
+}) => {
     const [heightContainer, setHeightContainer] = useState(467);
     const [currentUser, setCurrentUser] = useState(null);
     const accountList = [
@@ -29,24 +30,23 @@ export const GoogleAccount = ({
             email: "vuizuizui1010@gmail.com",
         }
     ];
-    const [tempList,setTempList] = useState(accountList);
-    const [mainUser,setMainUser] = useState({ ...accountList[1] });
-    const [subUser,setSubUser] = useState({  ...accountList[0]  });
+    const [tempList, setTempList] = useState(accountList);
+    const [mainUser, setMainUser] = useState({ ...accountList[1] });
+    const [subUser, setSubUser] = useState({ ...accountList[0] });
 
-    useEffect(()=>{
-        if(currentUser!==null) {
-            const temp = {avatar:currentUser.photoURL,name:currentUser.displayName,email:currentUser.email};
+    useEffect(() => {
+        if (currentUser !== null) {
+            const temp = { avatar: currentUser.photoURL, name: currentUser.displayName, email: currentUser.email };
             const list = tempList;
-            if(temp.avatar!==undefined)
-            {
+            if (temp.avatar !== undefined) {
                 list.push(temp);
                 setTempList(list);
-                setMainUser({ ...tempList[tempList.length-1] });
-                setSubUser({ ...tempList[tempList.length-2] });
-                setUserInfo({...tempList[tempList.length-1]});
+                setMainUser({ ...tempList[tempList.length - 1] });
+                setSubUser({ ...tempList[tempList.length - 2] });
+                setUserInfo({ ...tempList[tempList.length - 1] });
             }
         }
-    },[setTempList,tempList,currentUser,setUserInfo]);
+    }, [setTempList, tempList, currentUser, setUserInfo]);
 
     useEffect(() => {
         const unsubscribeFromAuth = auth.onAuthStateChanged(user => {

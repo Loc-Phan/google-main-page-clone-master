@@ -2,23 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MostVisitedPageItem } from "../Content-Layout/MostVisitedPageItem/MostVisitedPageItem";
 import { AddItemMostVisitedPage } from "../Content-Layout/AddItemMostVisitedPage/AddItemMostVisitedPage";
+import listMostVisitedPage from "../../constants/mostVisitedPage";
 
 import './Content.scss';
 import { EditShortcut } from '../Content-Layout/EditShortcut/EditShortcut';
 
 export const Content = () => {
-    const listMostVisitedPage = [
-        { id: '1', name: 'Google', url: 'google.com' },
-        { id: '2', name: 'ReactJS', url: 'reactjs.org' },
-        { id: '3', name: 'W3Schools', url: 'w3schools.com' },
-        { id: '4', name: 'Stack Overflow', url: 'stackoverflow.com' },
-        { id: '5', name: 'Github', url: 'github.com' },
-        { id: '6', name: 'Firebase', url: 'firebase.google.com' },
-        { id: '7', name: 'Material UI', url: 'material-ui.com' },
-        { id: '8', name: 'Udemy', url: 'udemy.com' },
-        { id: '9', name: 'NodeJs', url: 'nodejs.org' },
-    ];
-
     const [addItemOption, setAddItemOption] = useState(true);
     const [editShortcutMode, setEditShortcutMode] = useState("Shortcut");
     const [showEditShortcut, setShowEditShortcut] = useState(false);
